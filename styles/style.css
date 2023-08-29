@@ -60,6 +60,7 @@ ol {
 .result__video {
   inline-size: 100%;
   block-size: 100%;
+  object-fit: cover;
 }
 
 .search-form {
@@ -86,9 +87,6 @@ ol {
 .search-form__label {
   display:flex;
   gap: 5px;
-}
-
-.search-form__label:hover:nth-child(n+1) {
   cursor: pointer;
 }
 
@@ -127,7 +125,7 @@ ol {
   gap: 5px;
 }
 
-.search-form__label-text:hover {
+.search-form__label:hover > .search-form__label-text {
   text-decoration: underline;
 }
 
@@ -206,7 +204,6 @@ ol {
   max-block-size: 298px;
   display:flex;
   flex-direction: column;
-  gap: 30px;
   overflow-y: auto;
   scrollbar-width: none;
 }
@@ -217,10 +214,11 @@ ol {
 
 .content__list-item {
   padding: 2px;
+  margin-bottom: 30px;
 }
 
-li:not(.content__list-item, :has(.more-button)) {
-margin-top: -30px;
+.content__list-item:last-child {
+  margin-bottom: 0;
 }
 
 .content__card-link {
